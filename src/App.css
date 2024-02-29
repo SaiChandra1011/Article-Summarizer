@@ -92,7 +92,7 @@
 
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl text-center max-w-2xl;
+  @apply mt-5 text-lg text-red-500 sm:text-xl text-center max-w-2xl;
 }
 
 .url_input {

@@ -1,13 +1,34 @@
 import React from 'react'
 import {useState,useEffect} from "react";
 import {copy,linkIcon,loader,tick} from "../assets";
+import { useLazyGetSummaryQuery } from '../services/article';
 
 
 const Demo = () => {
+  const [article, setfarticle] = useState({
+    url:"",
+    summary:"",
+  });
+
+const [getSummary, {error,isFetching}] = useLazyGetSummaryQuery();
+
+  const handleSubmit =  async (e) => {
+    e.preventDefault();
+  const {data}  = await  getSummary({ 
+    articleUrl : article.url
+
+  });
+
+  if(data?.summary) {
+    const newArticle = { ... article,summary:data.summary}
+
+    setArticle(newArticle);
+  }
+  }
   return (
     <section className="mt-16 w-full max-w-xl" > 
     <div className="flex flex-col w-full gap-2 " >
-      <form className="relative flex justify-center items-center" onSubmit={() =>{}}>
+      <form className="relative flex justify-center items-center" onSubmit={handleSubmit}>
         <img  
         src={linkIcon}
         alt="link_icon"
@@ -16,14 +37,24 @@ const Demo = () => {
       <input
       type="url"
       placeholder='Enter the URL'
-      value=""
-      onChange={() =>{}}
+      value={article.url}
+      onChange={(e) => setfarticle({...
+      article, url:e.target.value})}
       required
       className="url_input peer"
 
       />
+      
+      <button 
+      type="submit"
+      className="submit_btn peer-focus:border-gray700 peer-focus:text-gray-700"
+      >
+        ✨
+      </button>
 
       </form>
+
+
 
     </div>
 
