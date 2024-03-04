@@ -34,30 +34,32 @@
   filter: invert(1);
 }
 
-.light_blue_purple_gradient {
+.different_colors_gradient {
   height: fit-content;
   z-index: 3;
   width: 100%;
   max-width: 640px;
   background-image: radial-gradient(
       at 27% 37%,
-      hsla(215, 98%, 61%, 1) 0px,
+      hsla(330, 98%, 21%, 1) 0px,
       transparent 0%
     ),
-    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
-    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
-    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
-    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
-    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+    radial-gradient(at 97% 21%, hsla(300, 98%, 32%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(270, 98%, 21%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(280, 96%, 27%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(300, 60%, 34%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(330, 67%, 33%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(270, 68%, 39%, 1) 0px, transparent 50%);
   position: absolute;
   content: "";
   width: 100%;
   height: 100%;
   filter: blur(100px) saturate(150%);
   top: 80px;
-  opacity: 0.15;
+  opacity: 0.110;
 }
+
+
 
 
 
@@ -83,9 +85,20 @@
   @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl text-center;
 }
 
-.dark_blue_gradient {
-  @apply bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 bg-clip-text text-transparent;
+.light_blue_gradient {
+  @apply bg-gradient-to-r from-blue-300 via-indigo-400 to-purple-500 bg-clip-text text-transparent;
   animation: gradientAnimation 5s ease infinite;
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 

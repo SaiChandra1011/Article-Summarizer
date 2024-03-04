@@ -4,12 +4,6 @@ import {createApi  , fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
 const rapidApiKey = import.meta.env.VITE_SUMMARIZER_API_KEY;
 
-try {
-	const response = await axios.request(options);
-	console.log(response.data);
-} catch (error) {
-	console.error(error);
-}
 
 export const articleApi = createApi({
 
@@ -22,11 +16,11 @@ export const articleApi = createApi({
                 'X-RapidAPI-Host' , 'article-extractor-and-summarizer.p.rapidapi.com' );
 
                 return headers;
-        }
+        },
     }),
     endpoints: (builder) => ({
         getSummary: builder.query({
-            query:(params) => '/summarize?url=${encodeURIComponent(params.articleUrl)}&length=3'
+            query: (params) => `summarize?url=${encodeURIComponent(params.articleUrl)}&length=3`
         })
     })
 });

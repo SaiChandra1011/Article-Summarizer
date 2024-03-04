@@ -9,7 +9,7 @@ const App = () => {
   return (
     <main>
       <div className="main">
-        <div className="light_blue_purple_gradient"/>
+        <div className="different_colors_gradient"/>
       </div>
 
       <div className="app">

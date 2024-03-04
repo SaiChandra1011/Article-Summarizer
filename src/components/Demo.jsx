@@ -118,7 +118,7 @@ useEffect(() => {
         <img src={loader} alt="load" className="w-20 h-20 object-contain"  />
       ): error ? (
       <p className="font-inter font-bold text-black text-center">
-       Ooops...
+       Sorry, we're unable to summarize this article at the moment. Please try another article or check back later.
        <br />
        <span className="font-satoshi font-normal text-gray-600">
         {error?.data?.error}
@@ -128,7 +128,7 @@ useEffect(() => {
         article.summary && (
           <div className="flex flex-col gap-3">
           <h2 className="font-satoshi font-bold text-gray-600 text-xl">
-            Article <span className= "blue_grdient">Summary</span>
+            Article <span className= "blue_gradient">Summary</span>
           </h2>
           <div className="summary_box">
           <p className="font-inter font-medium text-sm text-gray-700">
