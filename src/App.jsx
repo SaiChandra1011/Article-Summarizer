@@ -12,6 +12,7 @@ const App = () => {
         <div className="different_colors_gradient"/>
       </div>
 
+
       <div className="app">
         <Hero />
         <Demo />
